@@ -5,7 +5,6 @@ import { BASE_URL, PET_ID, PET_NAME } from "../constants";
 // CREAR MASCOTA POST /pet
 // =========================
 test.describe("CREAR MASCOTA", () => {
-
   // Caso 1 – Crear mascota válida
   test("Crear mascota válida", async ({ request }) => {
     const response = await request.post(`${BASE_URL}/pet`, {
@@ -52,5 +51,3 @@ test.describe("CREAR MASCOTA", () => {
     expect(response.status()).toBe(405);
   });
 });
-
-

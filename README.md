@@ -16,6 +16,7 @@ Este proyecto contiene la automatización de la API de **PetStore** utilizando *
 ## 🚀 Instalación
 
 ### Instalar dependencias del proyecto
+
 ```bash
 npm install
 ```
@@ -23,11 +24,13 @@ npm install
 ## 🧪 Ejecutar las pruebas
 
 ### Ejecutar todos los tests
+
 ```bash
 npm run test
 ```
 
 ### Ejecutar tests individuales
+
 ```bash
 npm run test:post    # Solo tests POST
 npm run test:get     # Solo tests GET
@@ -39,21 +42,25 @@ npm run test:all     # Todos los tests sin limpiar resultados previos
 ## 📊 Reportes
 
 ### Ver reporte de Allure
+
 ```bash
 npm run open:report
 ```
 
 ### Generar y abrir reporte de Allure
+
 ```bash
 npm run open:allure
 ```
 
 ### Limpiar resultados y reportes
+
 ```bash
 npm run test:clean
 ```
 
 Los reportes se generan en:
+
 - **Allure**: `allure-results/` y `allure-report/`
 - **Playwright HTML**: `playwright-report/index.html`
 
