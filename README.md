@@ -2,8 +2,6 @@
 
 Este proyecto contiene la automatización de la API de **PetStore** utilizando **Playwright + TypeScript**.
 
-La automatización replica exactamente los **mismos casos** definidos en la colección de **Postman** (Parte 3 del Challenge).
-
 ---
 
 ## 📦 Tecnologías
@@ -11,49 +9,86 @@ La automatización replica exactamente los **mismos casos** definidos en la cole
 - Playwright Test Runner
 - TypeScript
 - Node.js
+- Allure Report (para reportes detallados)
 
 ---
 
 ## 🚀 Instalación
 
+### Instalar dependencias del proyecto
 ```bash
 npm install
+```
 
-Ejecutar las pruebas
+## 🧪 Ejecutar las pruebas
 
-npm test
+### Ejecutar todos los tests
+```bash
+npm run test
+```
 
-Genera un reporte HTML en:
-playwright-report/index.html
+### Ejecutar tests individuales
+```bash
+npm run test:post    # Solo tests POST
+npm run test:get     # Solo tests GET
+npm run test:put     # Solo tests PUT
+npm run test:delete  # Solo tests DELETE
+npm run test:all     # Todos los tests sin limpiar resultados previos
+```
 
+## 📊 Reportes
 
-📁 Estructura del proyecto
-challenge-api-automation/
-│
-├─ package.json
-├─ playwright.config.ts
-├─ README.md
-└─ tests/
-   └─ pet.api.spec.ts
+### Ver reporte de Allure
+```bash
+npm run open:report
+```
 
+### Generar y abrir reporte de Allure
+```bash
+npm run open:allure
+```
 
-📌 Alcance
+### Limpiar resultados y reportes
+```bash
+npm run test:clean
+```
 
-POST /pet (máx. 3 casos)
-
-GET /pet/{petId}
-
-PUT /pet
-
-POST /pet/{petId} (form-data)
-
-DELETE /pet/{petId}
-
-Cada endpoint tiene máximo 3 casos, cumpliendo la consigna.
-
+Los reportes se generan en:
+- **Allure**: `allure-results/` y `allure-report/`
+- **Playwright HTML**: `playwright-report/index.html`
 
 ---
 
-✨ Autor
+## 📁 Estructura del proyecto
+
+```
+challenge-api-automation/
+│
+├─ package.json
+├─ playright.config.ts
+├─ README.md
+└─ tests/
+   ├─ constants.ts
+   └─ tests/
+      ├─ 1.post.spec.ts
+      ├─ 2.get.spec.ts
+      ├─ 3.put.spec.ts
+      └─ 4.delete.spec.ts
+```
+
+---
+
+## 📌 Alcance
+
+- **POST /pet** (máx. 3 casos)
+- **GET /pet/{petId}** (máx. 3 casos)
+- **PUT /pet** (máx. 3 casos)
+- **DELETE /pet/{petId}** (máx. 1 casos)
+
+Cada endpoint tiene máximo 3 casos, cumpliendo la consigna.
+
+---
+
+## ✨ Autor
 
 Martín Barroso

@@ -1,12 +1,21 @@
 {
-    "name": "challenge-api-automation",
-    "version": "1.0.0",
-    "description": "Automation for PetStore API - Challenge",
-    "scripts": {
-      "test": "playwright test"
-    },
-    "devDependencies": {
-      "@playwright/test": "^1.44.0"
-    }
+  "name": "challenge-api-automation",
+  "version": "1.0.0",
+  "description": "Automation for PetStore API - Challenge",
+  "scripts": {
+    "test": "rimraf allure-results && playwright test tests/tests/1.post.spec.ts tests/tests/2.get.spec.ts tests/tests/3.put.spec.ts tests/tests/4.delete.spec.ts --reporter=allure-playwright",
+    "test:post": "rimraf allure-results && playwright test tests/tests/1.post.spec.ts --reporter=allure-playwright",
+    "test:get": "rimraf allure-results && playwright test tests/tests/2.get.spec.ts --reporter=allure-playwright",
+    "test:put": "rimraf allure-results && playwright test tests/tests/3.put.spec.ts --reporter=allure-playwright",
+    "test:delete": "rimraf allure-results && playwright test tests/tests/4.delete.spec.ts --reporter=allure-playwright",
+    "test:all": "playwright test --reporter=allure-playwright",
+    "open:report": "allure serve allure-results",
+    "open:allure": "allure generate allure-results --clean -o allure-report && allure open allure-report",
+    "test:clean": "rimraf test-results playwright-report allure-results allure-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "allure-playwright": "^3.4.2",
+    "rimraf": "^6.1.2"
   }
-  
+}
