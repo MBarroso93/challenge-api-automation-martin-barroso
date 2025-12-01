@@ -1,0 +1,12 @@
+{
+    "name": "challenge-api-automation",
+    "version": "1.0.0",
+    "description": "Automation for PetStore API - Challenge",
+    "scripts": {
+      "test": "playwright test"
+    },
+    "devDependencies": {
+      "@playwright/test": "^1.44.0"
+    }
+  }
+  
